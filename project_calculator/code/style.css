@@ -10,8 +10,8 @@ body{
     gap: 10px;
 }
 
-.line, .operation, .number{
-    flex: auto;
+.line, .operation, .number, .clear, .vazio{
+    flex: 1;
     align-content: center;
 }
 
@@ -28,7 +28,7 @@ body{
     flex-direction: column;
 }
 
-.operation, .number{
+.operation, .number, .clear, .vazio{
     border-radius: 100%;
     text-align: center;
 
@@ -64,7 +64,4 @@ body{
     display: flex;
 }
 
-.number{
-    width: 20px;
-}
 
