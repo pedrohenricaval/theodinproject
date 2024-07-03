@@ -1,3 +1,4 @@
+/*funcoes math*/
 function math (operation, ...array){
     switch(operation){
         case "+":
@@ -21,7 +22,7 @@ function math (operation, ...array){
     }
 }
 
-/*funcoes math*/
+/* implementacao das funcoes math*/
 function add (array){
     return array.reduce( (total, element) => total+element )
 }
@@ -63,11 +64,16 @@ operationPointer.forEach(e =>
             writeScreen(e.target.textContent)
         )
     }
-)
+);
 
 const clearPointer= document.querySelector(".clear");
 clearPointer.addEventListener("click", () =>
     eraseScreen()
-)
+);
 
+const equalPointer= document.querySelector(".equal");
+equalPointer.addEventListener("click", () =>{
+    getResult();
+    eraseScreen();
+});
 

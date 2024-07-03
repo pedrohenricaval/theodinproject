@@ -10,7 +10,7 @@ body{
     gap: 10px;
 }
 
-.line, .operation, .number, .clear, .vazio{
+.line, .operation, .number, .clear, .vazio, .equal{
     flex: 1;
     align-content: center;
 }
@@ -28,7 +28,7 @@ body{
     flex-direction: column;
 }
 
-.operation, .number, .clear, .vazio{
+.operation, .number, .clear, .vazio, .equal{
     border-radius: 100%;
     text-align: center;
 
