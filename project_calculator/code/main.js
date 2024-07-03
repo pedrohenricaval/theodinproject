@@ -15,6 +15,9 @@ function math (operation, ...array){
         case "/":
             return divide(array);
             break;
+        case "%":
+            return mod(array);
+            break;
     }
 }
 
@@ -36,10 +39,35 @@ function divide (array){
     return array.reduce( (total, element) => total/element )
 }
 
+function mod (array){
+    return array.reduce( (total, element) => total%element )
+}
+
+/*----------------------------------------------------------------------------------------*/
+
+/* Adicionando eventListener a todos os botoes */
+
+const numberPointer = Array.from(document.querySelectorAll(".number"));
+numberPointer.forEach(e =>
+    {
+        e.addEventListener("click", (e) =>
+            writeScreen(e.target.textContent)
+        )
+    }
+)
+
+const operationPointer = Array.from(document.querySelectorAll(".operation"));
+operationPointer.forEach(e =>
+    {
+        e.addEventListener("click", (e) =>
+            writeScreen(e.target.textContent)
+        )
+    }
+)
+
+const clearPointer= document.querySelector(".clear");
+clearPointer.addEventListener("click", () =>
+    eraseScreen()
+)
 
 
-
-
-module.exports = {
-    math
-};
