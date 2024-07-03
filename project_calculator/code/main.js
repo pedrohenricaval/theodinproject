@@ -77,3 +77,40 @@ equalPointer.addEventListener("click", () =>{
     eraseScreen();
 });
 
+/*----------------------------------------------------------------------------------------*/
+
+/* funcao de escrever na tela e apagar */
+
+const operationStr =[
+    "%", "/", 
+    "+", "-", 
+    "*", "=",
+]
+
+function writeScreen(text){
+    let oldText = document.querySelector("#text");
+    let newText;
+
+    if (operationStr.includes(text)){
+        newText = document.createTextNode(` ${text} `);
+    } else {
+        newText = document.createTextNode(`${text}`); 
+    }
+    oldText.appendChild(newText);
+}
+
+function eraseScreen(){
+    let text = document.querySelector("#text");
+
+    const teste = Array.from (text.childNodes);
+    for (let i=0 ; i< teste.length ; i++){
+        teste[i].remove()
+    }
+}
+
+/*----------------------------------------------------------------------------------------*/
+
+/* exportar funcoes */
+module.exports = {
+    math
+};
