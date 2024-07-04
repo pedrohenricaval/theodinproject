@@ -1,3 +1,18 @@
+/* dados globais */
+const operationStr =[
+    "%", "/", 
+    "+", "-", 
+    "*", "=",
+]
+
+const numberStr = [
+    "0", "1", "2",
+    "3", "4", "5",
+    "6", "7", "8",
+    "Neg.", "9", ",",
+]
+
+/*----------------------------------------------------------------------------------------*/
 /*funcoes math*/
 function math (operation, ...array){
     switch(operation){
@@ -45,7 +60,6 @@ function mod (array){
 }
 
 /*----------------------------------------------------------------------------------------*/
-
 /* Adicionando eventListener a todos os botoes */
 
 const numberPointer = Array.from(document.querySelectorAll(".number"));
@@ -74,43 +88,73 @@ clearPointer.addEventListener("click", () =>
 const equalPointer= document.querySelector(".equal");
 equalPointer.addEventListener("click", () =>{
     getResult();
-    eraseScreen();
 });
 
 /*----------------------------------------------------------------------------------------*/
-
 /* funcao de escrever na tela e apagar */
 
-const operationStr =[
-    "%", "/", 
-    "+", "-", 
-    "*", "=",
-]
-
-function writeScreen(text){
-    let oldText = document.querySelector("#text");
+function writeScreen(caractere){
+    let screenText = document.querySelector("#text");
     let newText;
 
-    if (operationStr.includes(text)){
-        newText = document.createTextNode(` ${text} `);
+    if (operationStr.includes(caractere)){
+        newText = document.createTextNode(`${caractere}`);
     } else {
-        newText = document.createTextNode(`${text}`); 
+        newText = document.createTextNode(`${caractere}`); 
     }
-    oldText.appendChild(newText);
+    screenText.appendChild(newText);
 }
 
 function eraseScreen(){
-    let text = document.querySelector("#text");
+    let screenText = document.querySelector("#text");
 
-    const teste = Array.from (text.childNodes);
-    for (let i=0 ; i< teste.length ; i++){
-        teste[i].remove()
+    const textArray = Array.from (screenText.childNodes);
+    for (let i=0 ; i< textArray.length ; i++){
+        textArray[i].remove()
     }
 }
 
-/*----------------------------------------------------------------------------------------*/
+function readScreen(){
+    let screenText = document.querySelector("#text");
 
+    const textArray = Array.from (screenText.childNodes);
+    const textString = [];
+    let contador = 0;
+
+    while (!operationStr.includes(textArray[contador].textContent))
+    {
+        if(textString[0]===undefined){
+            textString[0] = textArray[contador].textContent;
+        } else {
+            textString[0] += textArray[contador].textContent
+        }
+
+        contador++;
+    }
+    
+    textString[1]= textArray[contador].textContent
+    contador ++;
+   
+    while (
+        !(textArray[contador]===undefined)
+        &&
+        !operationStr.includes(textArray[contador].textContent)
+    ){
+        if(textString[2]===undefined){
+            textString[2] = textArray[contador].textContent;
+        } else {
+            textString[2] += textArray[contador].textContent
+        }
+
+        contador++;
+    }
+
+    return textString;
+}
+
+/*----------------------------------------------------------------------------------------*/
 /* exportar funcoes */
+
 module.exports = {
     math
 };
