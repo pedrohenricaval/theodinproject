@@ -153,6 +153,14 @@ function readScreen(){
 }
 
 /*----------------------------------------------------------------------------------------*/
+/* funcao de obter resultado */
+function getResult(){
+    const operands = readScreen();
+    eraseScreen();
+    writeScreen(math(operands[1], operands[0], operands[2]));
+}
+
+/*----------------------------------------------------------------------------------------*/
 /* exportar funcoes */
 
 module.exports = {
