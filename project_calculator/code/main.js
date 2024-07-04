@@ -39,7 +39,7 @@ function math (operation, ...array){
 
 /* implementacao das funcoes math*/
 function add (array){
-    return array.reduce( (total, element) => total+element )
+    return array.reduce( (total, element) => Number(total)+Number(element))
 }
 
 function sub (array){
