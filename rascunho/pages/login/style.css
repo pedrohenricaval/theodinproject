@@ -1,0 +1,100 @@
+*{
+    font-family: 'Kadwa';
+}
+
+img{
+    height: 15vh;
+    width: auto;
+    margin-bottom: 16px;
+}
+
+button{
+    font-size: 1.6em;
+    background-color: rgb(13, 240, 133, 0.7);
+    padding:10px 30px;
+    border: none;
+    border-radius: 1rem;
+
+    justify-self: center;
+    align-self: center;
+}
+
+#loginPage{ /*tudo aqui é para enquadrar, tirar depois*/
+    height:700px; 
+    width:400px; 
+    margin:10px; 
+    border: 1px solid black; 
+    border-radius: 5%; 
+    overflow: hidden;
+}
+
+#loginPage{
+    display: flex;
+    flex-direction: column;
+}
+
+.header, .body, .footer{
+    background-color: #daf7e9;
+}
+
+.header, .footer{
+    padding: 10px;
+    text-align: center; 
+}
+
+.header{
+    font-size:1.5em; /*adequar ao resto do projeto*/
+}
+
+.body{
+    margin: 2px 0;
+    padding-top: 8%;
+    flex: auto;
+
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.footer{
+    padding: 10% 5%;
+
+    display:flex;
+    flex-direction: column;
+}
+
+.logo{
+    align-self: center;
+    text-align: center;
+}
+
+.formEntry{
+    margin: 0 10px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.inputName{
+    margin-bottom: 1px;
+}
+
+.inputContent{
+    border-radius: 0.8rem;
+    height: 28px;
+    background-color: rgba(47, 198, 180, 0.21);
+    border: white;
+    padding: 3px;
+}
+
+.loginButton{
+    max-width: 30%;
+    margin-top: 16px;
+}
+
+.signupButton{
+    flex: auto;
+    min-width: 100%;
+    margin-top: 16px;
+    flex: auto;
+}
