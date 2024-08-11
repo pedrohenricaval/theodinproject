@@ -1,0 +1,47 @@
+*{
+    font-family: 'Kadwa';
+}
+
+img{
+    height: auto;
+    width: 6%;
+
+    align-self: center;
+    align-content: center
+}
+
+#explorePage{ /*tudo aqui é para enquadrar, tirar depois*/
+    height:700px; 
+    width:400px; 
+    margin:10px; 
+    border: 1px solid black; 
+    border-radius: 5%; 
+    overflow: hidden;
+}
+
+#explorePage{
+    display: flex;
+    flex-direction: column;
+}
+
+.body{
+    background-color: #daf7e9;
+    padding-top: 3%;
+    flex: auto;
+}
+
+.formEntry{
+    display: flex;
+    padding:0 4%;
+    gap: 1%
+}
+
+.inputContent{
+    border-radius: 0.8rem;
+    height: 28px;
+    background-color: rgba(47, 198, 180, 0.21);
+    border: white;
+    padding: 3px;
+    
+    flex: auto;
+}
