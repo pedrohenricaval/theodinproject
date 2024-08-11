@@ -1,0 +1,68 @@
+*{
+    font-family: 'Kadwa';
+}
+
+button{
+    font-size: 1.6em;
+    background-color: rgb(13, 240, 133, 0.7);
+    padding:10px 30px;
+    border: none;
+    border-radius: 1rem;
+
+    justify-self: center;
+    align-self: center;
+}
+
+#newPostPage{ /*tudo aqui é para enquadrar, tirar depois*/
+    height:700px; 
+    width:400px; 
+    margin:10px; 
+    border: 1px solid black; 
+    border-radius: 5%; 
+    overflow: hidden;
+}
+
+#newPostPage{
+    display: flex;
+    flex-direction: column;
+}
+
+.body{
+    background-color: #daf7e9;
+    flex: auto;
+
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.formEntry{
+    margin: 0 10px;
+
+    display: flex; 
+    flex-direction: column;
+}
+
+.inputName{
+    margin-bottom: 2px;
+}
+
+.inputContentDescription, .inputContentImage{
+    border-radius: 0.8rem;
+    background-color: rgba(47, 198, 180, 0.21);
+    border: white;
+    padding: 3px;
+}
+
+.inputContentDescription{
+    height: 10vh;
+}
+
+.inputContentImage{
+    height: 40vh;
+}
+
+.submitImageButton{
+    min-width: 90%;
+    margin-top: 16px;
+}
